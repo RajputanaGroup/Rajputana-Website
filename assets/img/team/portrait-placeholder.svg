@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Portrait pending">
+  <rect width="400" height="300" fill="#16304a"/>
+  <circle cx="200" cy="126" r="38" fill="none" stroke="#c8a253" stroke-opacity=".45" stroke-width="1.5"/>
+  <path d="M144 214a56 56 0 0 1 112 0" fill="none" stroke="#c8a253" stroke-opacity=".45" stroke-width="1.5"/>
+  <text x="200" y="256" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#8fa3b8" letter-spacing="2">PORTRAIT PENDING</text>
+</svg>
