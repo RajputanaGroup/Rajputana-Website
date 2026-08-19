@@ -162,6 +162,25 @@ It is deliberately hard to get stuck behind:
 To change the duration, edit the two numbers in `assets/js/main.js` section 0.
 To remove it, delete the `<div class="preloader">` block from each HTML file.
 
+## 3c. What changed in the rebuild
+
+The home page was rebuilt around a single question: what does a brand manager at
+an international consumer company need to see before they trust you with India?
+
+- **Proof moved to position two.** The principal roster (Sebamed, Cetaphil,
+  Bioderma, Avene, Medela, Pigeon, Minimalist, J&J, Godrej) now sits directly
+  under the hero, before any self-description.
+- **Coverage got its own section**, with a route-to-market chain showing the five
+  stages the group actually runs, from import documentation to secondary-sales
+  reporting.
+- **Palette moved to charcoal and gold.** Gold on white read light; #14120f with
+  the emblem gold reads established. The emblem appears as a large, faint
+  watermark in the hero.
+- **Copy rewritten for a buyer, not a browser.** Channels, categories, territory
+  and service levels rather than "passionate about performance".
+- **A partner brief** replaces the generic contact block — it tells an enquirer
+  exactly what to send.
+
 ## 4. Review mode: `?flags=1`
 
 Several facts on this site need confirming before it goes live. Rather than ship

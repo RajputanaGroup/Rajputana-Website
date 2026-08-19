@@ -489,6 +489,9 @@ address a:hover { color: var(--accent); }
 /* Visible only when the page has ?flags=1 in the URL — lets Sushant audit
    every to-be-confirmed number without shipping notes to the public site. */
 .flag { display: none; }
+/* Section rules like `.coverage__stats span` outrank a bare `.flag`, which
+   leaked review markers onto the public page. This can't be outranked. */
+body:not([data-flags="on"]) .flag { display: none !important; }
 body[data-flags="on"] .flag {
   display: inline-block;
   margin-left: 0.4em;
