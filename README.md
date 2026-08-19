@@ -208,9 +208,38 @@ basis. Confirm the sample and period, or drop it.
 verbatim quotes, and are attributed generically. Replace with permissioned,
 attributable quotes before publishing.
 
+**Confirmed from the FxStudio Shopify theme (theme.liquid schema.org block and
+the Terms & Conditions page), October 2026:**
+
+| Item | Verified value |
+|---|---|
+| Legal entity | Felisha Cosmetics Private Limited (Companies Act, 2013) |
+| Registered office | Shop No. 1/2/3, Samarth Complex, Opp. BMC Market, Jawahar Nagar, Goregaon West, Mumbai 400062 |
+| Phone | +91 86577 64186 |
+| Email | ecom@felisha.in |
+| Amazon store | amazon.in/stores/ColorFx/page/37F922DE-ADF7-44FB-ABA9-DE8081A9DE41 |
+| Official socials | Instagram @fxstudio.in, YouTube @felishaindia4204 — **no Facebook listed** |
+| Jurisdiction | Courts of Mumbai |
+| Sister domains | fxstudio.shop, felisha.in, skinfx.felisha.in, colorfx.felisha.in, urbanveda... |
+
+Note the registered office is **400062**, the same building as Rajputana Agencies —
+not the 400104 address that appeared on the old site footer. The Facebook icon has
+been removed from the FxStudio footer because the store's own structured data lists
+only Instagram, Amazon and YouTube as official channels.
+
 **Marketplace links.** Only four are real: fxstudio.co.in, the FxStudio Amazon seller
 storefront, skwsh.in, and the Skwsh FirstCry brand store. Everything else is marked
 "Link pending" and points nowhere. Supply the real URLs or delete those tiles.
+
+**Still needed to finish the brand palettes.** The uploaded theme files are Liquid
+*templates*; they call `{% render 'color-schemes' %}` and `{% render 'fonts' %}`,
+which are separate snippets that were not included. The actual values live in:
+
+- `config/settings_data.json` — every colour scheme and font choice
+- `snippets/color-schemes.liquid` — the CSS variable output
+- `templates/index.json` — homepage content, including image and video asset paths
+
+Any one of those three, from either store, closes the gap.
 
 **Skwsh social links.** The Facebook, YouTube and X links on skwsh.in currently point
 at bare domains, so those hrefs are placeholders here too. Instagram (@skwsh.club)
