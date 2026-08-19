@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 44" role="img" aria-label="Rajputana Group">
+  <g fill="none" stroke="#c8a253" stroke-width="1.4">
+    <circle cx="18" cy="22" r="13"/><path d="M18 9v26M5 22h26"/>
+  </g>
+  <text x="44" y="20" font-family="Georgia,serif" font-size="17" fill="#0b1826" letter-spacing="0.5">Rajputana</text>
+  <text x="44" y="36" font-family="ui-monospace,monospace" font-size="9" fill="#c8a253" letter-spacing="4.2">GROUP</text>
+</svg>
