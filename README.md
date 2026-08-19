@@ -181,6 +181,27 @@ an international consumer company need to see before they trust you with India?
 - **A partner brief** replaces the generic contact block — it tells an enquirer
   exactly what to send.
 
+## 3d. Structure changes (latest pass)
+
+- **Five businesses, not four.** FxStudio and Skwsh are now listed as businesses
+  in their own right rather than folded under "Cosmetics / Felisha". They sit at
+  positions 03 and 04 in the group index and link straight to their microsites.
+- **The businesses are an index, not a card grid.** Five cards orphan one item at
+  most widths; an indexed row layout scales and reads like a company structure.
+- **Portfolio is grouped by category** — dermo-cosmetics, mother & baby,
+  pharmaceuticals, FMCG, telecom, direct selling — with a gold dot marking
+  currently distributed brands. Category depth is what a principal is actually
+  assessing. The Current/Past tabs are gone; the dot carries that distinction.
+- **Three generations of leadership.** Samarth Kanther added as third generation.
+
+### Samarth Kanther — needs supplying
+The card is live but has placeholders, both flagged. Send me, or edit directly in
+`index.html`:
+- Qualification / role line (currently reads "Qualification")
+- A two-paragraph bio in the same voice as the other two
+- A portrait, saved to `assets/img/team/samarth-kanther.jpg` (square crop works
+  best; the card is 1:1). Until then it falls back to the pending placeholder.
+
 ## 4. Review mode: `?flags=1`
 
 Several facts on this site need confirming before it goes live. Rather than ship
