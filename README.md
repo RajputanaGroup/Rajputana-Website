@@ -202,6 +202,38 @@ The card is live but has placeholders, both flagged. Send me, or edit directly i
 - A portrait, saved to `assets/img/team/samarth-kanther.jpg` (square crop works
   best; the card is 1:1). Until then it falls back to the pending placeholder.
 
+## 3e. Design system (latest pass)
+
+**Four type voices, each with a job.** Mixing them is what stops the page reading
+like a template:
+
+| Voice | Font | Used for |
+|---|---|---|
+| Serif | Instrument Serif | Headlines, big figures, years, the pull quote — the institution speaking |
+| Brand | Excon (Fontshare) | Wordmark, business names, buttons, nav |
+| Body | Poppins | Explanatory text |
+| Data | IBM Plex Mono | Eyebrows, tags, labels |
+
+Excon and Poppins are the live theme's own fonts, so brand fidelity holds. The
+serif was added because Poppins alone reads young — wrong for a 43-year-old house.
+
+**Chapter rhythm.** The page alternates ground rather than running six ivory
+sections in a row: hero (dark) → principals (dark) → coverage (ivory) →
+businesses (white) → **pull quote (full-bleed gold)** → track record (dark) →
+portfolio (white) → recognition (ivory) → leadership (white) → own brands (dark)
+→ partner (ivory) → footer (dark).
+
+**The jali divider.** The emblem is a pierced Rajasthani lattice screen. Tiled
+small and faint along a masked band, it becomes a rule that belongs to this
+company and no other. `.jali` in home.css — three instances, used sparingly.
+
+**The marquee.** Distribution is goods in motion, so the principal strip moves
+slowly and pauses on hover. Falls back to a static wrapped list under
+`prefers-reduced-motion`.
+
+**Ghosted years.** Each timeline entry carries its year at ~7rem in 7%-opacity
+gold behind the text. Depth without noise.
+
 ## 4. Review mode: `?flags=1`
 
 Several facts on this site need confirming before it goes live. Rather than ship

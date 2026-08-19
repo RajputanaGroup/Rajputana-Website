@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f%5B%5D=excon@400,500,600,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/logos/rajputana-emblem-512.png">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/home.css">
@@ -134,8 +134,9 @@
   <section class="principals" aria-label="Brands we distribute">
     <div class="shell">
       <p class="principals__label">Trusted with the Indian market by</p>
-      <ul class="principals__row">
-        <li>Sebamed</li>
+      <div class="marquee" data-marquee>
+        <ul class="marquee__track">
+          <li>Sebamed</li>
         <li>Cetaphil</li>
         <li>Bioderma</li>
         <li>Av&egrave;ne</li>
@@ -144,7 +145,19 @@
         <li>Minimalist</li>
         <li>Johnson &amp; Johnson</li>
         <li>Godrej</li>
-      </ul>
+        </ul>
+        <ul class="marquee__track" aria-hidden="true">
+          <li>Sebamed</li>
+        <li>Cetaphil</li>
+        <li>Bioderma</li>
+        <li>Av&egrave;ne</li>
+        <li>Medela</li>
+        <li>Pigeon</li>
+        <li>Minimalist</li>
+        <li>Johnson &amp; Johnson</li>
+        <li>Godrej</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -217,6 +230,8 @@
   </section>
 
   <!-- ===== 4. CAPABILITIES ===== -->
+  <div class="jali" aria-hidden="true"></div>
+
   <section class="section" id="capabilities">
     <div class="shell">
       <div class="section-head" data-reveal>
@@ -308,7 +323,17 @@
   </section>
 
   <!-- ===== 5. TRACK RECORD ===== -->
-  <section class="section" id="record">
+  <section class="pull" aria-label="Statement">
+    <div class="shell">
+      <blockquote data-reveal>
+        <p>A distributor&rsquo;s history is the only honest indicator of what it
+        can handle next.</p>
+        <footer>Forty-three years of ours, in order</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section dark chapter" id="record">
     <div class="shell">
       <div class="section-head" data-reveal>
         <div>
@@ -316,14 +341,15 @@
           <h2>Every partnership added a category, a territory or a capability.</h2>
         </div>
         <p>
-          A distributor&rsquo;s history is the only honest indicator of what it
-          can handle next. Here is ours, in order.
+          Read it as a capability list. Each entry is a category we learned, a
+          territory we opened, or an operating standard a principal held us to.
         </p>
       </div>
 
       <div class="timeline">
         <article class="tl-item" data-reveal>
           <p class="tl-year">1982</p>
+          <span class="tl-ghost" aria-hidden="true">1982</span>
           <div class="tl-body">
             <h3>Founded as a pharmaceutical distributor</h3>
             <p>Mumbai. Cold-chain discipline, batch traceability and chemist relationships — the operating standard everything since has been built on.</p>
@@ -333,6 +359,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">1991</p>
+          <span class="tl-ghost" aria-hidden="true">1991</span>
           <div class="tl-body">
             <h3>Rajputana Agencies, and the move into FMCG</h3>
             <p>A second entity for fast-moving goods, which run at a completely different velocity and shelf logic to pharma.</p>
@@ -342,6 +369,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">1997</p>
+          <span class="tl-ghost" aria-hidden="true">1997</span>
           <div class="tl-body">
             <h3>Channel partner to Johnson &amp; Johnson</h3>
             <p>The entire Western Region of Mumbai. The start of the baby-care expertise we still trade on today.</p>
@@ -351,6 +379,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">2001</p>
+          <span class="tl-ghost" aria-hidden="true">2001</span>
           <div class="tl-body">
             <h3>First carrying &amp; forwarding mandate</h3>
             <p>Western India C&amp;F for Conybio Healthcare, a Malaysian bio-ceramic company — our first stocking-agent role for an overseas principal.</p>
@@ -360,6 +389,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">2007</p>
+          <span class="tl-ghost" aria-hidden="true">2007</span>
           <div class="tl-body">
             <h3>First PAN-India footprint</h3>
             <p>Partnership with Britt Worldwide supporting Amway&rsquo;s network nationwide.</p>
@@ -369,6 +399,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">2013</p>
+          <span class="tl-ghost" aria-hidden="true">2013</span>
           <div class="tl-body">
             <h3>Godrej, Western Region Mumbai</h3>
             <p>Home and personal care at volume, across one of the densest retail markets in India.</p>
@@ -378,6 +409,7 @@
 
         <article class="tl-item" data-reveal>
           <p class="tl-year">2014&ndash;2023</p>
+          <span class="tl-ghost" aria-hidden="true">2014</span>
           <div class="tl-body">
             <h3>Premium personal care and dermo-cosmetics</h3>
             <p>A decade of adding specialist principals in the categories that reward service levels over discounting — where shelf presentation and chemist trust decide the outcome.</p>
@@ -392,7 +424,7 @@
   </section>
 
   <!-- ===== 6. RECOGNITION ===== -->
-  <section class="section" id="recognition">
+  <section class="section tint" id="recognition">
     <div class="shell">
       <div class="section-head" data-reveal>
         <div>
@@ -431,6 +463,8 @@
   </section>
 
   <!-- ===== 7. PORTFOLIO WALL ===== -->
+  <div class="jali" aria-hidden="true"></div>
+
   <section class="section" id="portfolio">
     <div class="shell">
       <div class="section-head" data-reveal>
@@ -496,6 +530,8 @@
   </section>
 
   <!-- ===== 8. LEADERSHIP ===== -->
+  <div class="jali" aria-hidden="true"></div>
+
   <section class="section" id="leadership">
     <div class="shell">
       <div class="section-head" data-reveal>
@@ -611,7 +647,7 @@
   </section>
 
   <!-- ===== 10. PARTNER ===== -->
-  <section class="section cta" id="partner">
+  <section class="section cta tint" id="partner">
     <div class="shell">
       <div class="cta__grid">
         <div data-reveal>
