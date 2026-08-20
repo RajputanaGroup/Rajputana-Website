@@ -160,7 +160,7 @@
         function tick(now) {
           var p = Math.min((now - start) / duration, 1);
           var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * eased) + (p === 1 ? suffix : '');
+          el.textContent = Math.round(target * eased).toLocaleString('en-IN') + (p === 1 ? suffix : '');
           if (p < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);

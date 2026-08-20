@@ -34,7 +34,13 @@
   --line:      rgba(20, 18, 15, 0.11);
   --line-dark: rgba(255, 255, 255, 0.13);
 
-  --font-display: "Excon", "Poppins", Georgia, serif;
+  /* Four voices, each with a job:
+     serif  — the institution speaking: headlines, figures, years, quotes
+     brand  — Excon, the brand's own face: wordmark, names, buttons, nav
+     body   — Poppins, explanatory text
+     mono   — labels, tags, data annotations                                */
+  --font-serif:   "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-display: "Excon", "Poppins", system-ui, sans-serif;
   --font-body:    "Poppins", system-ui, sans-serif;
   --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
 
@@ -43,7 +49,13 @@
   --radius-lg: 5px;
 }
 
-.home h1, .home h2, .home h3 { letter-spacing: -0.025em; font-weight: 600; }
+.home h1, .home h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+.home h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+.home h1 em, .home h2 em { font-style: italic; }
 .home .btn { border-radius: var(--radius); font-weight: 600; }
 .home .site-header { background: rgba(255, 255, 255, 0.92); }
 .home .skip-link { background: var(--gold); color: var(--ink); }
@@ -78,8 +90,8 @@
 }
 @media (max-width: 860px) { .section-head { grid-template-columns: 1fr; gap: 1.25rem; } }
 .section-head h2 {
-  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
-  line-height: 1.06;
+  font-size: clamp(2.1rem, 4.2vw, 3.7rem);
+  line-height: 1.02;
   margin-top: 1.1rem;
 }
 .section-head p { color: var(--text-dim); font-size: var(--t-lg); max-width: 46ch; }
@@ -130,9 +142,9 @@
 .hero__est em { font-style: normal; color: rgba(236, 231, 221, 0.5); }
 
 .hero h1 {
-  font-size: clamp(2.3rem, 6vw, 4.7rem);
-  line-height: 1.03;
-  font-weight: 600;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 0.98;
+  font-weight: 400;
   max-width: 18ch;
   margin-bottom: 1.5rem;
 }
@@ -168,9 +180,9 @@
   .figure:nth-child(-n+2) { border-bottom: 1px solid var(--line-dark); }
 }
 .figure__value {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-weight: 400;
   line-height: 1;
   color: var(--gold);
   font-variant-numeric: tabular-nums;
@@ -312,9 +324,9 @@
 }
 .coverage__stats div { background: var(--ivory); padding: clamp(1.1rem, 2.4vw, 1.5rem); min-width: 0; }
 .coverage__stats b {
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 400;
   color: var(--gold-deep);
   display: block;
   line-height: 1;
@@ -499,8 +511,8 @@
 .tl-item.is-visible::before { background: var(--gold); }
 
 .tl-year {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
   color: var(--gold-deep);
   font-variant-numeric: tabular-nums;
   margin-bottom: 0.45rem;
@@ -584,7 +596,7 @@
 .brand-card:hover { transform: translateY(-4px); border-color: var(--gold); }
 .brand-card:hover::before { opacity: 0.24; }
 .brand-card__mark { max-height: 32px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); }
-.brand-card__name { font-family: var(--font-display); font-size: clamp(1.28rem, 2vw, 1.7rem); font-weight: 600; color: #ece7dd; letter-spacing: -0.025em; }
+.brand-card__name { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 400; color: #ece7dd; letter-spacing: -0.025em; }
 .brand-card p { color: rgba(236, 231, 221, 0.7); font-size: 0.91rem; max-width: 36ch; line-height: 1.68; }
 .brand-card__go {
   margin-top: auto;
@@ -622,7 +634,7 @@
   align-items: start;
 }
 @media (max-width: 860px) { .cta__grid { grid-template-columns: 1fr; } }
-.cta h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.06; margin-bottom: 1.2rem; }
+.cta h2 { font-size: clamp(2.1rem, 4.2vw, 3.4rem); line-height: 1.06; margin-bottom: 1.2rem; }
 .cta > .shell > .cta__grid p { color: var(--text-dim); font-size: var(--t-lg); max-width: 48ch; }
 .brief { display: grid; margin-top: 1.9rem; list-style: none; padding: 0; }
 .brief li {
@@ -691,3 +703,210 @@
 .home .leaders { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1000px) { .home .leaders { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 680px)  { .home .leaders { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   CHAPTER RHYTHM + NEW ELEMENTS
+   The page was six consecutive ivory sections. These give it chapters.
+   ========================================================================== */
+
+/* Tinted section — a half-step between white and dark */
+.home .tint { background: var(--ivory-2); }
+
+/* Dark chapters invert their own tokens so children need no special-casing */
+.home .dark {
+  background: var(--ink);
+  color: #ece7dd;
+  --field: var(--ink);
+  --surface: var(--ink-2);
+  --text: #ece7dd;
+  --text-dim: rgba(236, 231, 221, 0.62);
+  --line: var(--line-dark);
+  --gold-deep: var(--gold-lift);
+  --gold-wash: rgba(255, 180, 54, 0.07);
+}
+.home .dark .eyebrow { color: var(--gold); }
+
+/* --- Jali divider ------------------------------------------------------
+   The emblem is a pierced lattice screen. Tiled small and faint, it becomes
+   a rule that belongs to this company and no other. */
+.jali {
+  height: 30px;
+  background-image: url("../img/logos/rajputana-emblem-512.png");
+  background-repeat: repeat-x;
+  background-size: auto 30px;
+  background-position: center;
+  opacity: 0.13;
+  margin-inline: auto;
+  max-width: var(--shell);
+  width: calc(100% - var(--gutter) * 2);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+}
+
+/* --- Marquee ------------------------------------------------------------
+   Distribution is goods in motion; a static row of principals contradicts
+   the whole proposition. Slow enough to read, not a ticker. */
+.marquee {
+  display: flex;
+  gap: clamp(1.4rem, 4.5vw, 3.8rem);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: clamp(1.4rem, 4.5vw, 3.8rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: max-content;
+  animation: marquee 46s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__track li {
+  font-family: var(--font-display);
+  font-size: clamp(0.98rem, 1.4vw, 1.28rem);
+  font-weight: 500;
+  color: rgba(236, 231, 221, 0.74);
+  white-space: nowrap;
+  transition: color 0.25s var(--ease);
+}
+.marquee__track li:hover { color: var(--gold); }
+@keyframes marquee { to { transform: translateX(calc(-100% - clamp(1.4rem, 4.5vw, 3.8rem))); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { flex-wrap: wrap; justify-content: center; mask-image: none; -webkit-mask-image: none; }
+  .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
+  .marquee__track[aria-hidden="true"] { display: none; }
+}
+
+/* --- Pull quote — the one place the page raises its voice --------------- */
+.pull {
+  background: var(--gold);
+  color: var(--ink);
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+/* No max-width here: `ch` resolves at the blockquote font-size, not the
+   display size of the paragraph inside, which crushed the line to ~180px. */
+.pull blockquote { margin: 0; }
+.pull p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.6vw, 3.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.pull footer {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 1.75rem;
+  color: rgba(20, 18, 15, 0.6);
+}
+
+/* --- Ghosted years behind the timeline ---------------------------------- */
+.tl-item { position: relative; }
+.tl-ghost {
+  position: absolute;
+  right: 0;
+  top: -0.35em;
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 1;
+  color: rgba(255, 180, 54, 0.07);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 900px) { .tl-ghost { font-size: clamp(3rem, 16vw, 5rem); top: -0.15em; } }
+.tl-body, .tl-year { position: relative; z-index: 1; }
+
+/* Timeline reads gold-on-charcoal in its dark chapter */
+.dark .timeline::before { background: linear-gradient(180deg, var(--gold), rgba(255,255,255,0.12) 55%); }
+.dark .tl-item::before { border-color: var(--gold); background: var(--ink); }
+.dark .tl-item.is-visible::before { background: var(--gold); }
+.dark .tl-year { color: var(--gold); }
+.dark .tl-brands li { border-color: rgba(255, 255, 255, 0.16); }
+
+/* --- Division rows: a gold edge on approach ----------------------------- */
+.division { position: relative; }
+.division::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.34s var(--ease);
+}
+.division:hover::after { transform: scaleY(1); }
+
+/* --- Recognition + partner on the tinted ground ------------------------- */
+.tint .award, .tint .cat, .tint .chain { background: var(--ivory); }
+.tint .awards { background: var(--line); }
+
+/* ==========================================================================
+   THE NETWORK — six channel cards. This is the strongest proof the group
+   owns: 3,000+ outlets and named retail partners in every channel.
+   ========================================================================== */
+.netgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.net {
+  background: var(--ivory);
+  padding: clamp(1.35rem, 2.6vw, 1.9rem);
+  min-width: 0;
+  transition: background 0.28s var(--ease);
+}
+.net:hover { background: var(--gold-wash); }
+.net h3 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.net ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.net li {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  padding-left: 0.85rem;
+  position: relative;
+}
+.net li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.55em;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.75;
+}
+
+/* Turnover / headcount line on each business row */
+.division__fig {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+.division__fig b { color: var(--gold-deep); font-weight: 500; }
+.division__fig em { font-style: normal; opacity: 0.45; margin-inline: 0.25em; }
+
+/* Portraits are real photographs now — frame them properly */
+.leader__photo { background: var(--ivory-3); }
+.leader__photo img { object-position: center 22%; }

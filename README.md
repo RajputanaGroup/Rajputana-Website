@@ -202,6 +202,71 @@ The card is live but has placeholders, both flagged. Send me, or edit directly i
 - A portrait, saved to `assets/img/team/samarth-kanther.jpg` (square crop works
   best; the card is 1:1). Until then it falls back to the pending placeholder.
 
+## 3e. Design system (latest pass)
+
+**Four type voices, each with a job.** Mixing them is what stops the page reading
+like a template:
+
+| Voice | Font | Used for |
+|---|---|---|
+| Serif | Instrument Serif | Headlines, big figures, years, the pull quote — the institution speaking |
+| Brand | Excon (Fontshare) | Wordmark, business names, buttons, nav |
+| Body | Poppins | Explanatory text |
+| Data | IBM Plex Mono | Eyebrows, tags, labels |
+
+Excon and Poppins are the live theme's own fonts, so brand fidelity holds. The
+serif was added because Poppins alone reads young — wrong for a 43-year-old house.
+
+**Chapter rhythm.** The page alternates ground rather than running six ivory
+sections in a row: hero (dark) → principals (dark) → coverage (ivory) →
+businesses (white) → **pull quote (full-bleed gold)** → track record (dark) →
+portfolio (white) → recognition (ivory) → leadership (white) → own brands (dark)
+→ partner (ivory) → footer (dark).
+
+**The jali divider.** The emblem is a pierced Rajasthani lattice screen. Tiled
+small and faint along a masked band, it becomes a rule that belongs to this
+company and no other. `.jali` in home.css — three instances, used sparingly.
+
+**The marquee.** Distribution is goods in motion, so the principal strip moves
+slowly and pauses on hover. Falls back to a static wrapped list under
+`prefers-reduced-motion`.
+
+**Ghosted years.** Each timeline entry carries its year at ~7rem in 7%-opacity
+gold behind the text. Depth without noise.
+
+## 3f. Real data from Rajputana_Group.pptx (FY 2024-25)
+
+Every placeholder number is gone. `?flags=1` now returns zero markers.
+
+| Vertical | Entities | Team | Turnover |
+|---|---|---|---|
+| Distribution | Rajputana Agencies Pvt Ltd | 35 | Rs 100 Cr |
+| Real estate | Rajputana Residency LLP + Associates | 5 | Rs 40 Cr |
+| Brands | Felisha + **Elixir Cosmetics** | 12 | Rs 3 Cr |
+| IoT devices | SuperUs Systems | 25 (60% engineers) | Rs 6 Cr |
+
+**Group: Rs 149 Cr, 77 people, 41 years.**
+
+Other verified figures now live on the page: 3,000+ outlets · 18+ years average
+employee tenure · 37% growth Q1 FY25-26 vs Q1 FY24-25 · 350+ distributors supplied
+with bundled combos · 6,000 sq.ft warehousing across Mumbai and Bhiwandi.
+
+**Corrections made.** "9 states / 33 cities" and "110+ people" appear nowhere in
+the deck and have been removed. The current portfolio is Cetaphil, Sebamed,
+MotherSparsh, Minimalist, Bioderma, Mothercare, Glenmark (Episoft, La Shield),
+BCPL (Adidas, David Beckham, Mercedes), plus L'Oreal and Flaura Essentials as the
+newest additions.
+
+**Portraits** were extracted from slide 2 of the deck to
+`assets/img/team/*.jpg`. Note the source images were not in slide order — image4
+is Kirti, image3 is Samarth, image2 is Pravesh and needed cropping to exclude a
+second person.
+
+**Not yet used from the deck** (available if you want more pages): the full
+SuperUs investor story (Adani x Sharp airport installs, Reliance Smart Kurla ESL,
+Panasonic Vidhan Sabha 450+ eSignCards, 15,000 sq.ft factory, Rs 34.67 Cr
+pipeline), and the realty project detail.
+
 ## 4. Review mode: `?flags=1`
 
 Several facts on this site need confirming before it goes live. Rather than ship
