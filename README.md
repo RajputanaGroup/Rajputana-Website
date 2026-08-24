@@ -289,9 +289,22 @@ I also swept every grid on the page for the same fault class — none remain.
 - Nav, rail and section labels now agree: "Network" and "The group" replace the
   older "Coverage" / "Capabilities" wording
 
-**Cache-busting.** Every CSS and JS link now carries `?v=2026-08-20a`. Bump that
-string whenever you edit a stylesheet, or browsers will serve the old one — which
-is exactly what made the marquee appear broken.
+**Cache-busting is automatic now.** A hand-typed version string only works if you
+remember to change it — and forgetting once means browsers keep serving the
+stylesheet they cached first. That happened twice on this project.
+
+Every CSS and JS link now carries a hash of that file's own contents
+(`home.css?v=2d575363`). Change a byte, the hash changes, every browser refetches.
+Change nothing, it stays cached.
+
+**After editing any stylesheet or script, run this before you upload:**
+
+```bash
+python3 stamp.py
+```
+
+It rewrites the tags in all four HTML files. Takes a second, and makes stale CSS
+structurally impossible.
 
 ## 3h. Fourth page: /realty/ + 2026 data
 

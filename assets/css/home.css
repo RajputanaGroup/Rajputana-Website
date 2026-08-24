@@ -726,22 +726,6 @@
 }
 .home .dark .eyebrow { color: var(--gold); }
 
-/* --- Jali divider ------------------------------------------------------
-   The emblem is a pierced lattice screen. Tiled small and faint, it becomes
-   a rule that belongs to this company and no other. */
-.jali {
-  height: 30px;
-  background-image: url("../img/logos/rajputana-emblem-512.png");
-  background-repeat: repeat-x;
-  background-size: auto 30px;
-  background-position: center;
-  opacity: 0.13;
-  margin-inline: auto;
-  max-width: var(--shell);
-  width: calc(100% - var(--gutter) * 2);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
-}
 
 /* --- Marquee ------------------------------------------------------------
    Distribution is goods in motion; a static row of principals contradicts
@@ -850,51 +834,6 @@
 .tint .award, .tint .cat, .tint .chain { background: var(--ivory); }
 .tint .awards { background: var(--line); }
 
-/* ==========================================================================
-   THE NETWORK — six channel cards. This is the strongest proof the group
-   owns: 3,000+ outlets and named retail partners in every channel.
-   ========================================================================== */
-.netgrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.net {
-  background: var(--ivory);
-  padding: clamp(1.35rem, 2.6vw, 1.9rem);
-  min-width: 0;
-  transition: background 0.28s var(--ease);
-}
-.net:hover { background: var(--gold-wash); }
-.net h3 {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-.net ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
-.net li {
-  font-size: 0.86rem;
-  color: var(--text-dim);
-  line-height: 1.4;
-  padding-left: 0.85rem;
-  position: relative;
-}
-.net li::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0.55em;
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0.75;
-}
 
 /* Turnover / headcount line on each business row */
 .division__fig {
@@ -910,3 +849,242 @@
 /* Portraits are real photographs now — frame them properly */
 .leader__photo { background: var(--ivory-3); }
 .leader__photo img { object-position: center 22%; }
+
+/* ==========================================================================
+   CHANNEL SWITCHER — six channels, partner counts of 15 / 11 / 5 / 4 / 3 / 3.
+   A grid of six cards is always ragged at those counts, so only one channel
+   is shown at a time. The count sits on the tab, so the depth of each channel
+   is legible without opening it.
+   ========================================================================== */
+.switch {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  min-height: 340px;
+}
+@media (max-width: 880px) { .switch { grid-template-columns: 1fr; min-height: 0; } }
+
+/* --- Tab column --- */
+.switch__nav {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  background: var(--ivory-2);
+}
+@media (max-width: 880px) {
+  .switch__nav { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .switch__nav::-webkit-scrollbar { display: none; }
+}
+
+.switch__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: clamp(0.9rem, 2vw, 1.15rem) clamp(1rem, 2.2vw, 1.5rem);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: background 0.24s var(--ease), color 0.24s var(--ease);
+}
+.switch__btn:last-child { border-bottom: 0; }
+@media (max-width: 880px) {
+  .switch__btn { width: auto; flex: 0 0 auto; border-bottom: 0; border-right: 1px solid var(--line); }
+}
+
+/* Gold marker slides in on the active tab */
+.switch__btn::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transition: transform 0.28s var(--ease);
+}
+@media (max-width: 880px) {
+  .switch__btn::before { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: 3px; transform: scaleX(0); }
+}
+.switch__btn[aria-selected="true"]::before { transform: scaleY(1); }
+@media (max-width: 880px) { .switch__btn[aria-selected="true"]::before { transform: scaleX(1); } }
+
+.switch__btn:hover { background: var(--gold-wash); }
+.switch__btn[aria-selected="true"] { background: var(--ivory); }
+
+.switch__name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  white-space: nowrap;
+  transition: color 0.24s var(--ease);
+}
+.switch__btn[aria-selected="true"] .switch__name { color: var(--text); }
+
+.switch__count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--gold-deep);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 0.2em 0.6em;
+  flex-shrink: 0;
+  transition: background 0.24s var(--ease), border-color 0.24s var(--ease), color 0.24s var(--ease);
+}
+.switch__btn[aria-selected="true"] .switch__count {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+/* --- Panel column --- */
+.switch__panels { padding: clamp(1.5rem, 3.2vw, 2.5rem); min-width: 0; }
+.switch__panel { animation: switch-in 0.4s var(--ease) both; }
+@keyframes switch-in { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .switch__panel { animation: none; } }
+
+.switch__note {
+  font-size: 0.93rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 52ch;
+  padding-bottom: 1.35rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.switch__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.switch__list li {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 0.5em 0.95em;
+  transition: border-color 0.22s var(--ease), background 0.22s var(--ease);
+}
+.switch__list li:hover { border-color: var(--gold); background: var(--gold-wash); }
+
+/* ==========================================================================
+   FINISH
+   ========================================================================== */
+
+
+/* Scroll cue — a gold line that travels down, then repeats */
+.scrollcue {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(236, 231, 221, 0.42);
+  transition: color 0.25s var(--ease);
+}
+.scrollcue:hover { color: var(--gold); }
+.scrollcue__line {
+  width: 46px;
+  height: 1px;
+  background: rgba(236, 231, 221, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+.scrollcue__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-100%);
+  animation: cue 2.6s var(--ease) infinite;
+}
+@keyframes cue {
+  0%   { transform: translateX(-100%); }
+  55%  { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce) { .scrollcue__line::after { animation: none; transform: none; } }
+
+.home .site-footer { position: relative; overflow: hidden; }
+.home .site-footer > .shell { position: relative; z-index: 1; }
+
+/* The portfolio legend was floating loose above the rows */
+.cats__key {
+  padding-bottom: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   GEOGRAPHIC TIERS — four concentric levels of engagement, from full
+   market entry down to our own vans on a Mumbai beat. Straight from the
+   2026 company profile; it answers "how far will you actually go for us".
+   ========================================================================== */
+.geo { margin-top: clamp(2.5rem, 5vw, 3.75rem); }
+.geo__title {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 1.5rem;
+}
+.geo__tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+@media (max-width: 900px) { .geo__tiers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .geo__tiers { grid-template-columns: 1fr; } }
+
+.geo__tier {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(1.35rem, 2.6vw, 1.9rem);
+  background: var(--ivory);
+  min-width: 0;
+  position: relative;
+  transition: background 0.28s var(--ease);
+}
+.geo__tier:hover { background: var(--gold-wash); }
+/* Each tier a shade more gold than the last — widest scope, strongest tint */
+.geo__tier:nth-child(1) { background: color-mix(in srgb, var(--gold) 13%, var(--ivory)); }
+.geo__tier:nth-child(2) { background: color-mix(in srgb, var(--gold) 9%, var(--ivory)); }
+.geo__tier:nth-child(3) { background: color-mix(in srgb, var(--gold) 5%, var(--ivory)); }
+
+.geo__scope {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.geo__tier h3 { font-size: 1.02rem; margin-bottom: 0.55rem; }
+.geo__tier p { font-size: 0.86rem; color: var(--text-dim); line-height: 1.6; }
+
+.geo__reach {
+  margin-top: 1.5rem;
+  font-size: 0.87rem;
+  line-height: 1.9;
+  color: var(--text-dim);
+  word-spacing: 0.12em;
+}
+.geo__reach b { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem; font-size: 0.95rem; }

@@ -48,6 +48,23 @@
     setTimeout(dismiss, 3000);               // ceiling — never strand anyone
   })();
 
+  /* --- 0b. Scroll progress ------------------------------------------------ */
+  (function () {
+    var bar = document.getElementById('progress');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
   /* --- 1. Editorial flags -------------------------------------------------
      Add ?flags=1 to any URL to reveal the "confirm before publishing" markers
      on unverified numbers and claims. Invisible to normal visitors.        */

@@ -44,6 +44,8 @@
   --sh-136: #6c5aa8;      /* Cocktail Duochrome Purple */
   --sh-203: #e8dccb;      /* Nail Fix Moisturizer */
 
+  /* Shared display voice; Schibsted Grotesk stays for names, UI and body */
+  --font-serif:   "Instrument Serif", Georgia, serif;
   --font-display: "Schibsted Grotesk", system-ui, sans-serif;
   --font-body:    "Schibsted Grotesk", system-ui, sans-serif;
   --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
@@ -52,7 +54,9 @@
   --radius-lg: 6px;
 }
 
-.fx h1, .fx h2, .fx h3 { letter-spacing: -0.035em; font-weight: 500; }
+.fx h1, .fx h2 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.012em; }
+.fx h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 600; }
+.fx h1 em, .fx h2 em { font-style: italic; color: var(--accent); }
 
 .fx .btn { color: #fff; }
 .fx .btn--ghost { color: var(--text); }
@@ -95,7 +99,8 @@
 .fx-hero__inner { position: relative; z-index: 2; padding-block: clamp(3rem, 8vw, 5.5rem); }
 
 .fx-hero h1 {
-  font-size: var(--t-4xl);
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  font-weight: 400;
   color: #fff;
   max-width: 13ch;
   line-height: 0.98;
@@ -438,14 +443,6 @@
 .quotes__nav button:disabled { opacity: 0.35; cursor: default; }
 
 /* --- Section rhythm ----------------------------------------------------- */
-.fx .section-head { margin-bottom: clamp(2rem, 4.5vw, 3.5rem); }
-.fx .section-head h2 { font-size: var(--t-3xl); }
-.fx .section-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-  gap: clamp(1.25rem, 4vw, 3.5rem);
-  align-items: end;
-}
-@media (max-width: 800px) { .fx .section-head { grid-template-columns: 1fr; } }
+
 
 .fx .site-footer { background: var(--surface-2); }

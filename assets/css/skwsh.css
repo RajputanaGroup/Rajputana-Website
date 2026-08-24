@@ -35,6 +35,8 @@
   --blush:     #f5d6cb;
   --line:      rgba(35, 52, 61, 0.11);
 
+  /* Shared display voice; Nunito keeps the softness in names, UI and body */
+  --font-serif:   "Instrument Serif", Georgia, serif;
   --font-display: "Nunito", system-ui, sans-serif;
   --font-body:    "Nunito Sans", system-ui, sans-serif;
   --font-mono:    "Nunito Sans", ui-monospace, monospace;
@@ -43,8 +45,10 @@
   --radius-lg: 24px;
 }
 
-.sk h1, .sk h2, .sk h3 { font-weight: 800; letter-spacing: -0.02em; }
-.sk .eyebrow { font-weight: 800; letter-spacing: 0.16em; }
+.sk h1, .sk h2 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.012em; }
+.sk h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; }
+.sk h1 em, .sk h2 em { font-style: italic; color: var(--accent); }
+
 .sk .btn { border-radius: 100px; color: #fff; }
 .sk .btn--ghost { color: var(--text); }
 .sk .site-header { background: color-mix(in srgb, var(--field) 92%, transparent); }
@@ -88,7 +92,8 @@
 .sk-hero__inner { position: relative; z-index: 2; padding-block: clamp(3rem, 8vw, 5rem); }
 
 .sk-hero h1 {
-  font-size: var(--t-4xl);
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  font-weight: 400;
   max-width: 12ch;
   line-height: 1;
   margin-bottom: 1.25rem;
@@ -434,14 +439,6 @@
 .sk-quote__where { font-size: var(--t-xs); color: var(--text-dim); }
 
 /* --- Section head ------------------------------------------------------- */
-.sk .section-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-  gap: clamp(1.25rem, 4vw, 3.5rem);
-  align-items: end;
-  margin-bottom: clamp(2rem, 4.5vw, 3.25rem);
-}
-@media (max-width: 800px) { .sk .section-head { grid-template-columns: 1fr; } }
-.sk .section-head h2 { font-size: var(--t-3xl); }
+
 
 .sk .site-footer { background: var(--surface-2); }
