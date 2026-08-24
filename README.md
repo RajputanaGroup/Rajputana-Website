@@ -238,14 +238,15 @@ gold behind the text. Depth without noise.
 
 Every placeholder number is gone. `?flags=1` now returns zero markers.
 
-| Vertical | Entities | Team | Turnover |
-|---|---|---|---|
-| Distribution | Rajputana Agencies Pvt Ltd | 35 | Rs 100 Cr |
-| Real estate | Rajputana Residency LLP + Associates | 5 | Rs 40 Cr |
-| Brands | Felisha + **Elixir Cosmetics** | 12 | Rs 3 Cr |
-| IoT devices | SuperUs Systems | 25 (60% engineers) | Rs 6 Cr |
+| Vertical | Entities | Team |
+|---|---|---|
+| Distribution | Rajputana Agencies Pvt Ltd | 45+ |
+| Real estate | Rajputana Residency LLP + Associates | 5 |
+| Brands | Felisha + **Elixir Cosmetics** | 12 |
+| IoT devices | SuperUs Systems | 25 (60% engineers) |
 
-**Group: Rs 149 Cr, 77 people, 41 years.**
+**Turnover figures are deliberately not published anywhere on the site.** They
+exist in the source decks; keep them there.
 
 Other verified figures now live on the page: 3,000+ outlets · 18+ years average
 employee tenure · 37% growth Q1 FY25-26 vs Q1 FY24-25 · 350+ distributors supplied
@@ -264,8 +265,104 @@ second person.
 
 **Not yet used from the deck** (available if you want more pages): the full
 SuperUs investor story (Adani x Sharp airport installs, Reliance Smart Kurla ESL,
-Panasonic Vidhan Sabha 450+ eSignCards, 15,000 sq.ft factory, Rs 34.67 Cr
-pipeline), and the realty project detail.
+Panasonic Vidhan Sabha 450+ eSignCards, 15,000 sq.ft factory), and the realty project detail.
+
+## 3g. Channel switcher + finish pass
+
+**The network section had a real bug.** Six channels with partner counts of
+15/11/5/4/3/3 were laid out in a four-column grid, so two tracks sat empty and
+the container background showed through as a grey block. The card heights were
+also wildly uneven.
+
+Fixed by showing one channel at a time: a tab column on the left carrying each
+channel's partner count, and the partner list on the right. Any count renders
+tidily, and the counts on the tabs make channel depth legible without clicking.
+Keyboard-navigable via arrow keys; tabs stack into a horizontal scroller below
+880px.
+
+I also swept every grid on the page for the same fault class — none remain.
+
+**Finish added:**
+- Hairline gold **scroll-progress bar** at the top of the viewport
+- **Scroll cue** at the foot of the hero, a gold line that travels and repeats
+- **Emblem watermark in the footer**, bookending the one in the hero
+- Nav, rail and section labels now agree: "Network" and "The group" replace the
+  older "Coverage" / "Capabilities" wording
+
+**Cache-busting.** Every CSS and JS link now carries `?v=2026-08-20a`. Bump that
+string whenever you edit a stylesheet, or browsers will serve the old one — which
+is exactly what made the marquee appear broken.
+
+## 3h. Fourth page: /realty/ + 2026 data
+
+**A Realty page now exists** at `realty/index.html` with its own stylesheet
+(`assets/css/realty.css`), built from the Rajputana Residency brochure: hero and
+day/night renders, 15-storey facts bar, locale timings, 2 BHK and 3 BHK floor
+plans, amenities, full internal/external specification list, consultants and
+MahaRERA number. Eight images were extracted from the PDF to
+`assets/img/realty/`. It is linked from the group site, FxStudio and Skwsh.
+
+### IMPORTANT — the founder
+The Residency brochure reads **"Late Shri Kirti Kanther (Founder)"**. The site now
+uses that honorific and refers to him in the past tense throughout. The end date
+on his card is flagged — please supply it, or tell me to remove the year range.
+
+### Figures superseded by the 2026 Company Profile
+The 2026 deck supersedes the FY24-25 one in several places, and the site now
+follows it:
+
+| | Was | Now |
+|---|---|---|
+| Distribution team | 35 | **45+** |
+| Warehousing | 6,000 sq.ft, Mumbai + Bhiwandi | **9,000 sq.ft, Mumbai + Bhiwandi + Pune** |
+| Geography | not stated | **12 states, 26 cities** |
+| Growth headline | 37% Q1 | **60%+ CAGR in baby & skincare, 3 years** |
+
+**New: the four-tier geographic model** from slide 9, now its own block —
+Pan-India (import, sales & marketing) → Western India (C&F) → Maharashtra
+(super distribution) → Mumbai & Pune (direct). It answers "how far will you
+actually go for us" better than any prose I could write. All 26 cities listed.
+
+### Conflict to resolve
+The Residency brochure says **110+ team members**; the 2026 deck's department
+table totals **53** and says "45+". The site uses the deck's numbers. Tell me
+which is right.
+
+### Not yet done
+The FxStudio and Skwsh pages were **not** restyled in this pass — I ran out of
+room. They are correct and working, but they have not had the same typographic
+and rhythm treatment as the group and realty pages.
+
+## 3i. One system, four skins
+
+**No turnover figures anywhere.** Every rupee amount has been removed from the
+site and from this README. Headcount and capability stay, because those help a
+partner decide; revenue does not. The numbers live in your decks — keep them
+there. The Realty row now carries the MahaRERA number instead, and the hero's
+fourth figure is "12 states / 26 cities".
+
+**The four pages now share their chrome and differ only in skin.** This is the
+house-of-brands model: making them look identical would erase FxStudio and Skwsh
+as brands, so the split is deliberate.
+
+| Shared — lives in `base.css` | Brand-specific — lives in each brand sheet |
+|---|---|
+| Instrument Serif for every h1/h2 | Supporting typeface (Excon / Schibsted Grotesk / Nunito) |
+| Emblem preloader | Accent colour and background tone |
+| Header lockup + nav pattern | Corner radius (sharp for group, 100px pills for Skwsh) |
+| Scroll-progress bar | Section content and imagery |
+| Jali divider | |
+| Numbered mono eyebrow with gold rule | |
+| Two-column `.section-head` grid | |
+| Footer emblem watermark | |
+
+Previously `.progress`, `.jali`, the footer watermark and `.section-head` were
+duplicated across four stylesheets and had already drifted apart. They are now
+declared once in `base.css`, so a change propagates everywhere instead of to one
+page. FxStudio and Skwsh gained all seven shared elements in this pass.
+
+Section eyebrows are numbered on all four pages now — `01 — The network`,
+`01 — Our story`, and so on.
 
 ## 4. Review mode: `?flags=1`
 
