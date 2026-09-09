@@ -393,12 +393,27 @@ Section eyebrows are numbered on all four pages now — `01 — The network`,
 | 10 | Amenities spacing, remove Kids area | Both done. |
 | 11 | Locale heading and spacing | Heading is now "Everything within minutes, not journeys." |
 
-### Logos (2, 3, 6) — how this works
-I do not have logo files for DMart, Cetaphil, Amazon and the rest, and I will not
-fabricate or hotlink them. So every brand name on the home page is now an `<img>`
-pointing at `assets/img/partner-brands/`. If the file is missing, JavaScript
-replaces it with the brand name set in type — so the page looks finished today
-and becomes logos the moment you drop files in. **No code change needed.**
+### Logos — why they are still typography
+
+I tried to source these automatically and it does not work. For the record:
+
+| Route | Result |
+|---|---|
+| Brand websites, Wikipedia, Clearbit | Network-blocked in my environment |
+| simple-icons (3,459 CC0 brand SVGs, fetched via npm) | **6 of your 65 brands** — Adidas, GSK, Samsung, Vodafone, BigBasket, Paytm |
+
+Nine per cent coverage would look far worse than what is there now: six real logos
+sitting beside fifty-nine text names. Mixed is worse than uniform.
+
+**Where the files actually are:** you distribute these brands, so your principals'
+marketing teams have already sent you logo packs — Cetaphil, Sebamed, Bioderma and
+Minimalist all supply distributor asset kits. Check your brand folders before
+asking anyone. For the retail chains (DMart, Reliance, Apollo), their corporate
+sites have press/media pages.
+
+The slots are already wired: every brand name is an `<img>` pointing at
+`assets/img/partner-brands/`. If the file is missing, JavaScript swaps in the brand
+name set in type. Drop a file in and the logo appears. **No code change needed.**
 
 Naming rules and a trick for listing every filename the page is asking for are in
 `assets/img/partner-brands/README.txt`.
@@ -484,7 +499,7 @@ the Terms & Conditions page), October 2026:**
 | Item | Verified value |
 |---|---|
 | Legal entity | Felisha Cosmetics Private Limited (Companies Act, 2013) |
-| Registered office | Shop No. 1/2/3, Samarth Complex, Opp. BMC Market, Jawahar Nagar, Goregaon West, Mumbai 400062 |
+| Registered office | Bungalow No. A-20/78, Siddha Co-op Housing Society Ltd., Siddharth Nagar No. 2, Shri Rang Sable Marg, Next to Ozone Swimming Pool, Goregaon West, Mumbai 400104 |
 | Phone | +91 86577 64186 |
 | Email | ecom@felisha.in |
 | Amazon store | amazon.in/stores/ColorFx/page/37F922DE-ADF7-44FB-ABA9-DE8081A9DE41 |
@@ -492,10 +507,11 @@ the Terms & Conditions page), October 2026:**
 | Jurisdiction | Courts of Mumbai |
 | Sister domains | fxstudio.shop, felisha.in, skinfx.felisha.in, colorfx.felisha.in, urbanveda... |
 
-Note the registered office is **400062**, the same building as Rajputana Agencies —
-not the 400104 address that appeared on the old site footer. The Facebook icon has
-been removed from the FxStudio footer because the store's own structured data lists
-only Instagram, Amazon and YouTube as official channels.
+**Address note.** The FxStudio Terms page lists Samarth Complex, 400062. Sushant
+has confirmed the correct address for all pages is the Siddha Co-op Housing
+Society one at 400104, so that is what the site now shows everywhere. The
+Facebook icon has been removed from the FxStudio footer because the store's own
+structured data lists only Instagram, Amazon and YouTube as official channels.
 
 **Marketplace links.** Only four are real: fxstudio.co.in, the FxStudio Amazon seller
 storefront, skwsh.in, and the Skwsh FirstCry brand store. Everything else is marked
