@@ -377,6 +377,61 @@ page. FxStudio and Skwsh gained all seven shared elements in this pass.
 Section eyebrows are numbered on all four pages now — `01 — The network`,
 `01 — Our story`, and so on.
 
+## 3j. Change list (latest pass)
+
+| # | Request | Done |
+|---|---|---|
+| 1 | Add nutraceutical | Hero lede now reads "beauty, baby care, body care, skincare and nutraceuticals". Also fixed a duplication I had introduced: "26 cities and six channels **and 26 cities**". |
+| 2 | Official logos in the principal marquee | Logo **slots** built. See below. |
+| 3 | Logos in the channel switcher | Same. |
+| 4 | Show the cities on a map | Built as a weighted regional view. See below. |
+| 5 | SuperUs website | superussystems.com linked on the IoT row. |
+| 6 | Logos in the portfolio categories | Same slot system, `.live` gold dot preserved. |
+| 7 | Portrait alignment | All three recropped from the deck to matching framing; the second person is fully out of Pravesh's frame. |
+| 8 | Head office address | Now Bungalow No. A-20/78, Siddha Co-op Housing Society Ltd., Goregaon West 400104, in both the contact block and the footer. |
+| 9 | Plan-card alignment | Fixed. |
+| 10 | Amenities spacing, remove Kids area | Both done. |
+| 11 | Locale heading and spacing | Heading is now "Everything within minutes, not journeys." |
+
+### Logos (2, 3, 6) — how this works
+I do not have logo files for DMart, Cetaphil, Amazon and the rest, and I will not
+fabricate or hotlink them. So every brand name on the home page is now an `<img>`
+pointing at `assets/img/partner-brands/`. If the file is missing, JavaScript
+replaces it with the brand name set in type — so the page looks finished today
+and becomes logos the moment you drop files in. **No code change needed.**
+
+Naming rules and a trick for listing every filename the page is asking for are in
+`assets/img/partner-brands/README.txt`.
+
+### The spacing bug (9, 10, 11) — root cause
+Three list patterns rendered label and value with no separation: "SV Road2 min",
+"GymnasiumFitness centre", "Master bedroom13'3"". The locale list had a CSS rule
+written against `.rl-loc`, a class that **does not exist in the markup**, so it
+never applied at all. All three now use explicit two-column grids.
+
+### The map (4) — built from the supplied SVG
+The vecteezy file was a 2.2 MB decorative infographic: 1,082 paths, embedded
+gradients, teal fills, state name labels rendered as outlines, city pins, a
+"MAP OF INDIA" title and neighbouring countries. Not usable as-is.
+
+What I did:
+1. Identified the state polygons by fill colour — **five** teal shades, not four
+   (Telangana used a fifth, which is why it was a hole on the first attempt).
+2. Dropped the 639 dark-grey label outlines, the orange pins, the neighbouring
+   countries, the ocean, the title letterforms and the Andaman strip.
+3. Rounded all coordinates to integers — at ~500px wide from a 2,294-unit
+   viewBox, decimals are invisible.
+4. Result: **26 state paths, 213 KB inline** (down from 2.2 MB), recoloured
+   through CSS so it follows the palette.
+
+Cities are plotted by converting latitude/longitude into the map's own
+coordinate space, calibrated against the landmass extremes (68.19E–97.40E,
+8.08N–37.05N). Mumbai and Pune carry a gold pin with a pulse ring; the other 31
+are dark. Verified visually — Srinagar sits in Kashmir, Mumbai on the coast, the
+north-eastern cities in the right states.
+
+To adjust a pin, edit its `cx`/`cy` in the `<g class="imap__pin">` group.
+
 ## 4. Review mode: `?flags=1`
 
 Several facts on this site need confirming before it goes live. Rather than ship

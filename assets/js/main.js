@@ -326,6 +326,13 @@
       // "hide" removes the image entirely. For sub-brand marks, showing a
       // different brand's logo is worse than showing none at all.
       if (img.dataset.fallback === 'hide') { img.style.display = 'none'; return; }
+      if (img.dataset.fallback === 'text') {
+        var word = document.createElement('span');
+        word.className = 'logo-text';
+        word.textContent = img.getAttribute('alt') || '';
+        if (img.parentNode) img.parentNode.replaceChild(word, img);
+        return;
+      }
       if (img.src !== img.dataset.fallback) img.src = img.dataset.fallback;
     }
     img.addEventListener('error', swap, { once: true });

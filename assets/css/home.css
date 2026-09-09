@@ -1088,3 +1088,91 @@
   word-spacing: 0.12em;
 }
 .geo__reach b { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+/* ==========================================================================
+   PRESENCE BY REGION — the 26 cities, weighted so the depth is visible.
+   A true geographic India outline needs a proper SVG asset; see README.
+   ========================================================================== */
+.zones { margin-top: 1.75rem; border-top: 1px solid var(--line); }
+.zone { padding: clamp(1.1rem, 2.2vw, 1.6rem) 0; border-bottom: 1px solid var(--line); }
+.zone__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.7rem; }
+.zone__head h3 { font-size: 1rem; }
+.zone__n { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--gold-deep); white-space: nowrap; }
+.zone__bar { height: 3px; background: var(--line); position: relative; margin-bottom: 0.8rem; }
+.zone__bar::after {
+  content: "";
+  position: absolute; inset: 0 auto 0 0;
+  width: var(--w, 100%);
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+  transform-origin: left;
+  animation: zone-in 1s var(--ease) both;
+}
+@keyframes zone-in { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .zone__bar::after { animation: none; } }
+.zone__cities { font-size: 0.87rem; line-height: 1.85; color: var(--text-dim); word-spacing: 0.1em; }
+.zones__note { margin-top: 1.35rem; font-size: 0.87rem; color: var(--text-dim); max-width: 60ch; line-height: 1.7; }
+
+/* Logo slots: an <img> that fails becomes clean type, so nothing looks broken */
+.marquee__track img, .switch__list img, .cat img { display: block; width: auto; }
+.marquee__track img { max-height: 34px; filter: brightness(0) invert(1); opacity: 0.8; }
+.switch__list img, .cat img { max-height: 26px; }
+.logo-text { display: inline-block; }
+.marquee__track .logo-text { font-family: var(--font-display); font-size: clamp(0.98rem,1.4vw,1.26rem); font-weight: 500; color: rgba(236,231,221,0.76); white-space: nowrap; }
+.switch__list .logo-text { font-family: var(--font-display); font-size: 0.92rem; font-weight: 500; color: var(--text); }
+.cat .logo-text { font-size: 0.96rem; }
+.cat li.live .logo-text { color: var(--text); font-weight: 500; }
+
+/* ==========================================================================
+   INDIA MAP — state paths extracted from the supplied vector (2.2 MB, 1,082
+   paths, teal infographic) down to 26 state outlines, recoloured to the
+   palette. Cities plotted by converting lat/long into the map's own
+   coordinate space, calibrated against the landmass extremes.
+   ========================================================================== */
+.presence {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 5vw, 4rem);
+  align-items: start;
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+@media (max-width: 900px) { .presence { grid-template-columns: 1fr; } }
+
+.imap { position: relative; }
+.imap svg { width: 100%; height: auto; display: block; overflow: visible; }
+.imap__states path {
+  fill: var(--ivory-3);
+  stroke: rgba(207, 122, 18, 0.42);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.3s var(--ease);
+}
+.imap:hover .imap__states path { fill: color-mix(in srgb, var(--gold) 14%, var(--ivory-3)); }
+
+.imap__pin circle { fill: var(--ink); transition: r 0.25s var(--ease); }
+.imap__pin:hover circle { r: 20; }
+.imap__pin--hq circle { fill: var(--gold-deep); }
+.imap__pulse {
+  fill: none;
+  stroke: var(--gold-deep);
+  stroke-width: 4;
+  animation: imap-pulse 3s ease-out infinite;
+}
+@keyframes imap-pulse {
+  0%   { r: 18; opacity: 0.9; }
+  100% { r: 90; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .imap__pulse { animation: none; opacity: 0.35; } }
+
+.imap__key { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.imap__key li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+.imap__swatch { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); flex-shrink: 0; }
+.imap__swatch--hq { background: var(--gold-deep); width: 11px; height: 11px; }
+
+.presence__list .zones { margin-top: 0; }

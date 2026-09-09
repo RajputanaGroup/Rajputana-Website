@@ -297,3 +297,84 @@
 @media (max-width: 860px) { .rl-enq { grid-template-columns: 1fr; } }
 
 .rl 
+/* ==========================================================================
+   LIST SPACING FIX
+   Three list patterns rendered their label and value with no separation
+   ("SV Road2 min", "GymnasiumFitness centre"). The old `.rl-loc` selector
+   never matched the markup at all. These do.
+   ========================================================================== */
+
+/* Room dimensions: label left, measurement right, on one baseline */
+.rl-rooms li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.42rem 0 0.42rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.rl-rooms li:last-child { border-bottom: 0; }
+.rl-rooms li span { min-width: 0; }
+.rl-rooms li b {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+}
+.rl-rooms li::before { top: 0.95em; }
+
+/* Amenity cells: name on its own line, description beneath */
+.rl-list li { padding-left: 0; }
+.rl-list li::before { display: none; }
+.rl-amen__list > * { display: grid; align-content: start; gap: 0.3rem; }
+.rl-amen__list li,
+.rl-list li {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.55rem 0;
+}
+.rl-list b,
+.rl-amen__list b {
+  display: block;
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.rl-list span,
+.rl-amen__list span { display: block; font-size: 0.84rem; line-height: 1.55; color: var(--text-dim); }
+
+/* Locale timings: place left, minutes right — the rule that never matched */
+.rl-locale__lists ul { list-style: none; margin: 0; padding: 0; display: grid; }
+.rl-locale__lists li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.rl-locale__lists li:last-child { border-bottom: 0; }
+.rl-locale__lists li::before { display: none; }
+.rl-locale__lists li span { min-width: 0; }
+.rl-locale__lists li b {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.rl-locale__lists h3 {
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+/* Plan cards: give the header some air */
+.rl-home__head { padding-bottom: 0.85rem; border-bottom: 1px solid var(--line); margin-bottom: 1rem; }
+.rl-home__note { padding-top: 0.9rem; border-top: 1px solid var(--line); }
