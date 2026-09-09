@@ -1,0 +1,125 @@
+LOGO FILES NEEDED — Rajputana Group website
+============================================
+
+82 unique files — 13 received, 69 outstanding. (86 slots — six brands appear in two sections
+and share one file, so you only ever send each logo once.)
+
+HOW IT WORKS
+  Drop a file into this folder and the logo appears. No code change.
+  Until a file exists, the brand name shows as text — so the page never
+  looks broken while you collect them. Send them in any order.
+
+FORMAT
+  PNG with a transparent background (SVG is also fine)
+  ~240px tall, whitespace trimmed off the edges
+  Horizontal wordmark where the brand has one
+  Full colour is fine
+
+WHERE TO GET THEM
+  Principals: your own brand folders first — Cetaphil, Sebamed, Bioderma and
+  Minimalist all issue distributor asset kits on appointment.
+  Retail chains: their corporate press / media pages.
+
+FILENAMES — must match exactly (lowercase, hyphens, no spaces)
+--------------------------------------------------------------
+
+## Hero strip — current portfolio   (14 files)
+    1. Cetaphil                   cetaphil.png   [RECEIVED]
+    2. Sebamed                    sebamed.png   [RECEIVED]
+    3. Bioderma                   bioderma.png   [RECEIVED]
+    4. Minimalist                 minimalist.png   [RECEIVED]
+    5. L’Oréal                    loreal.png   [RECEIVED]
+    6. Mothercare                 mothercare.png   [RECEIVED]
+    7. MotherSparsh               mothersparsh.png   [RECEIVED]
+    8. Glenmark                   glenmark.png   [RECEIVED]
+    9. Episoft                    episoft.png   [RECEIVED]
+   10. La Shield                  la-shield.png
+   11. Adidas                     adidas.png   [RECEIVED]
+   12. David Beckham              david-beckham.png   [RECEIVED]
+   13. Mercedes                   mercedes.png
+   14. Flaura Essentials          flaura-essentials.png   [RECEIVED]
+
+## Network — channel partners   (33 files)
+   15. DMart                      dmart.png
+   16. Reliance Retail            reliance-retail.png
+   17. Health & Glow              health-and-glow.png
+   18. Star Bazar                 star-bazar.png
+   19. Ratnadeep                  ratnadeep.png
+   20. FirstCry                   firstcry.png
+   21. Haiko                      haiko.png
+   22. Me N Moms                  me-n-moms.png
+   23. Metro C&C                  metro-candc.png
+   24. More                       more.png
+   25. Pothys                     pothys.png
+   26. Amazon                     amazon.png
+   27. Flipkart                   flipkart.png
+   28. Nykaa                      nykaa.png
+   29. Myntra                     myntra.png
+   30. Tira                       tira.png
+   31. Purplle                    purplle.png
+   32. Tata Cliq                  tata-cliq.png
+   33. BigBasket                  bigbasket.png
+   34. Hopscotch                  hopscotch.png
+   35. PharmEasy                  pharmeasy.png
+   36. 1mg                        1mg.png
+   37. Smytten                    smytten.png
+   38. Paytm                      paytm.png
+   39. DMart Ready                dmart-ready.png
+   40. Ferns & Petals             ferns-and-petals.png
+   41. Blinkit                    blinkit.png
+   42. Zepto                      zepto.png
+   43. Swiggy Instamart           swiggy-instamart.png
+   44. Apollo Pharmacy            apollo-pharmacy.png
+   45. Wellness Forever           wellness-forever.png
+   46. NoblePlus                  nobleplus.png
+   47. Guardian Pharmacy          guardian-pharmacy.png
+
+## Portfolio — brands we have carried   (39 files)
+   48. Sebamed                    sebamed.png   [RECEIVED]
+   49. Cetaphil                   cetaphil.png   [RECEIVED]
+   50. Bioderma                   bioderma.png   [RECEIVED]
+   51. Avène                      avene.png
+   52. Minimalist                 minimalist.png   [RECEIVED]
+   53. Beauty Concepts            beauty-concepts.png
+   54. L’Oréal Paris              loreal-paris.png   [RECEIVED]
+   55. Himalaya                   himalaya.png
+   56. Medela                     medela.png
+   57. Pigeon                     pigeon.png
+   58. Johnson & Johnson          johnson-and-johnson.png
+   59. Chicco                     chicco.png
+   60. Libero                     libero.png
+   61. Snuggy                     snuggy.png
+   62. Cipla                      cipla.png
+   63. Pfizer                     pfizer.png
+   64. Ranbaxy                    ranbaxy.png
+   65. Aventis                    aventis.png
+   66. GSK                        gsk.png
+   67. Alembic                    alembic.png
+   68. Micro Labs                 micro-labs.png
+   69. USV                        usv.png
+   70. Natco                      natco.png
+   71. Midascare                  midascare.png
+   72. Dhootapapeshwar            dhootapapeshwar.png
+   73. Godrej                     godrej.png
+   74. Good Knight                good-knight.png
+   75. Top Ramen                  top-ramen.png
+   76. Ravalgaon                  ravalgaon.png
+   77. Paras                      paras.png
+   78. Sunheri                    sunheri.png
+   79. Vodafone                   vodafone.png
+   80. Idea                       idea.png
+   81. Samsung                    samsung.png
+   82. Videocon                   videocon.png
+   83. BPL                        bpl.png
+   84. Amway                      amway.png
+   85. Britt Worldwide            britt-worldwide.png
+   86. Conybio Healthcare         conybio-healthcare.png
+
+
+RECEIVED SO FAR
+---------------
+  adidas, bioderma, cetaphil, david-beckham, episoft, flaura-essentials, glenmark, loreal, loreal-paris, minimalist, mothercare, mothersparsh, sebamed
+
+These are live on the hero strip. Sections still on plain type are the
+channel switcher and the portfolio wall — they turn to logos once coverage
+there is high enough that a mixed wall stops looking unfinished.
